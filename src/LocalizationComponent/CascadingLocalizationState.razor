@@ -1,0 +1,33 @@
+﻿@using LocalizationComponent.Interface
+
+@implements IDisposable
+
+@inject ILocalizationStateProvider prvLocalizationState
+
+<CascadingValue TValue="System.Threading.Tasks.Task<LocalizationState>" Name="@CascadingParameterName.LocalizationState" Value="@tskLocalizationState" ChildContent="@ChildContent" />
+
+@code {
+    private Task<LocalizationState>? tskLocalizationState;
+
+    [Parameter]
+    public required RenderFragment ChildContent { get; init; }
+
+    protected override void OnInitialized()
+    {
+        prvLocalizationState.LocalizationStateChanged += OnLocalizationStateChanged;
+    }
+
+    private void OnLocalizationStateChanged(object? oSender, LocalizationStateEventArgs argsLocalizationState)
+    {
+        _ = InvokeAsync(() =>
+        {
+            tskLocalizationState = argsLocalizationState.LocalizationState;
+            StateHasChanged();
+        });
+    }
+
+    void IDisposable.Dispose()
+    {
+        prvLocalizationState.LocalizationStateChanged -= OnLocalizationStateChanged;
+    }
+}
