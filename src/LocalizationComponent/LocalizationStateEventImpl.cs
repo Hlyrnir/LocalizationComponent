@@ -1,4 +1,7 @@
-﻿namespace LocalizationComponent
+﻿using System;
+using System.Threading.Tasks;
+
+namespace LocalizationComponent
 {
     public abstract class LocalizationStateEventImpl
     {

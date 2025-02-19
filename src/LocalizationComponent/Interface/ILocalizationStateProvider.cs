@@ -1,4 +1,8 @@
-﻿namespace LocalizationComponent.Interface
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace LocalizationComponent.Interface
 {
     public interface ILocalizationStateProvider
     {

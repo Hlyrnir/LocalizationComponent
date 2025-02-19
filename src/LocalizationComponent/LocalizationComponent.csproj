@@ -1,13 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-	<PackageId>LocalizationComponent</PackageId>
-	  
+    <AssemblyName>LocalizationComponent</AssemblyName>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings>disable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>$(AssemblyName)</PackageId>
+    <PackageVersion>0.1.0</PackageVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>Blazor Webassembly, Localization</PackageTags>
+    <Description>Component to localize a Blazor WebAssembly.</Description>
+    <RepositoryUrl>https://github.com/Hlyrnir/LocalizationComponent</RepositoryUrl>
+    <Authors>Hlyrnir</Authors>
+  </PropertyGroup>
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Localization;
+using System.Collections.Generic;
 
 namespace LocalizationComponent
 {
@@ -37,7 +38,7 @@ namespace LocalizationComponent
             }
         }
 
-        public IEnumerable<LocalizedString> GetAllStrings(bool includeParentCultures)
+        public IEnumerable<LocalizedString> GetAllStrings(bool bIncludeParentCultures)
         {
             foreach (KeyValuePair<string, string> kvpEntry in dictDictionary)
             {

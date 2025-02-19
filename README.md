@@ -1,3 +1,3 @@
 # LocalizationComponent
 
-Blazor Component - under construction
+Component to localize a Blazor WebAssembly.
